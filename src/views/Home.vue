@@ -1,7 +1,12 @@
 <template>
   <div>
     <h2>Homepage</h2>
-    <div v-for="story in stories" :key="story"><h2>{{ story }}</h2></div>
+    <div v-for="story in stories" :key="story.id">
+      <h2>{{ story.data.title }}</h2>
+      <p>Type: {{ story.data.type }}</p>
+      <p>Link: {{ story.data.url }}</p>
+      <p>Score: {{ story.data.score }}</p>
+    </div>
   </div>
 </template>
 
@@ -19,7 +24,19 @@ export default {
     axios
       .get("https://hacker-news.firebaseio.com/v0/topstories.json")
       .then(result => {
-        this.stories = result.data;
+        this.results = result.data.slice(0, 10);
+        this.results.forEach(element => {
+          axios
+            .get(
+              "https://hacker-news.firebaseio.com/v0/item/" + element + ".json"
+            )
+            .then(result => {
+              this.stories.push(result);
+            })
+            .catch(err => {
+              (err);
+            });
+        });
       })
       .catch(err => {
         this.err = err;
