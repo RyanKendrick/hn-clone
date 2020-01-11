@@ -1,3 +1,4 @@
+<!-- HTML we wish to render for our component within the <template> -->
 <template>
   <div class="pure-menu pure-menu-horizontal">
     <div class="container">
@@ -17,6 +18,7 @@
   </div>
 </template>
 
+<!-- define all of our core component functionality, a.k.a. all of the JavaScript functions within the <script> tags -->
 <script>
   export default {
     name: "Navbar",
