@@ -1,30 +1,30 @@
-<!-- HTML we wish to render for our component within the <template> -->
 <template>
   <div class="pure-menu pure-menu-horizontal">
     <div class="container">
-      <a href="#" class="pure-menu-heading pure-menu-link">Home</a>
+      <router-link to="/" class="pure-menu-heading pure-menu-link"
+        >Home</router-link
+      >
       <ul class="pure-menu-list">
         <li class="pure-menu-item">
-          <a href="#" class="pure-menu-link">News</a>
+          <router-link class="pure-menu-link" to="/about">News</router-link>
         </li>
         <li class="pure-menu-item">
-          <a href="#" class="pure-menu-link">Sports</a>
+          <router-link class="pure-menu-link" to="/about">Sports</router-link>
         </li>
         <li class="pure-menu-item">
-          <a href="#" class="pure-menu-link">Finance</a>
+          <router-link class="pure-menu-link" to="/about">Finance</router-link>
         </li>
       </ul>
     </div>
   </div>
 </template>
 
-<!-- define all of our core component functionality, a.k.a. all of the JavaScript functions within the <script> tags -->
 <script>
   export default {
-    name: "Navbar",
+    name: "Navbar"
   };
-
 </script>
+
 <style scoped>
   .pure-menu {
     background-color: #e17842;
