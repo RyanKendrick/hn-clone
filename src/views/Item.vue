@@ -3,7 +3,7 @@
     <span class="score"> {{ story.data.score }}</span>
     <router-link :to="{ path: '/story/' + story.data.id}">
       {{ story.data.title }}
-      <span>{{ story.data.url | host }}</span>
+      <span>{{ story.data.url }}</span>
     </router-link>
     <br />
     <span class="meta">
