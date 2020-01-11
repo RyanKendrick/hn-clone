@@ -37,7 +37,7 @@ export default {
     font-size: 1.1em;
     font-weight: 700;
     position: absolute;
-    top: 50%:auto;
+    top: 50%;
     left: 0;
     width: 80px;
     text-align: center;
@@ -55,7 +55,7 @@ export default {
     margin-left: 10px;
     color: #828282;
   }
-  
+
   .story .meta {
     font-size: 0.85em;
     color: #828282;
