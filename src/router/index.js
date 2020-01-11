@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import Single from "@/views/Single.vue";
+import New from "@/views/New.vue";
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/story/:id",
     name: "Single",
     component: Single
+  },
+  {
+    path: "/new",
+    name: "New",
+    component: New
   },
   {
     path: '/about',
