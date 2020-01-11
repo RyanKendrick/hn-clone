@@ -1,12 +1,29 @@
 <template>
-  <div class="home">
-    <h2>Home Page</h2>
+  <div>
+    <h2>Homepage</h2>
+    <div v-for="story in stories" :key="story"><h2>{{ story }}</h2></div>
   </div>
 </template>
 
 <script>
-
+import axios from "axios";
 export default {
-  name: 'home'
-}
+  name: "home",
+  data: function() {
+    return {
+      err: "",
+      stories: []
+    };
+  },
+  created: function() {
+    axios
+      .get("https://hacker-news.firebaseio.com/v0/topstories.json")
+      .then(result => {
+        this.stories = result.data;
+      })
+      .catch(err => {
+        this.err = err;
+      });
+  }
+};
 </script>
