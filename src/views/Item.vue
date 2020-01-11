@@ -7,10 +7,7 @@
     </router-link>
     <br />
     <span class="meta">
-      by {{ story.data.by }} |
-      {{ story.data.time }} Ago |
-      {{ story.data.descendants }}
-      comments
+      by {{ story.data.by }} | {{ story.data.time }} Ago | {{ story.data.descendants }} comments
     </span>
   </div>
 </template>

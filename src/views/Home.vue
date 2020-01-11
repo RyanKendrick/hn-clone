@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import Item from "@/views/Item.vue"
 
 export default {
@@ -13,33 +12,14 @@ export default {
   components: {
     'item': Item
   },
-  data: function() {
-    return {
-      err: "",
-      stories: []
-    };
+  data: function () {
+  return {
+    err: '',
+    stories: this.$store.state.topStories
+  }
   },
-  created: function() {
-    axios
-      .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-      .then(result => {
-        this.results = result.data.slice(0, 10);
-        this.results.forEach(element => {
-          axios
-            .get(
-              "https://hacker-news.firebaseio.com/v0/item/" + element + ".json"
-            )
-            .then(result => {
-              this.stories.push(result);
-            })
-            .catch(err => {
-              (err);
-            });
-        });
-      })
-      .catch(err => {
-        this.err = err;
-      });
+  created: function () {
+    if (this.$store.state.topStories.length === 0) this.$store.dispatch('fetch_top_stories')
   }
 };
 </script>
