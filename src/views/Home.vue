@@ -1,8 +1,11 @@
 <template>
   <div>
     <h2>Homepage</h2>
-    <div v-for="story in stories" :key="story.id">
-      <h2>{{ story.data.title }}</h2>
+    <div v-for="story in stories" :key="story">
+      <!-- <router-link> component effectively allows you to change your location within this Single Page Application without making a request for a new page -->
+      <router-link :to="{ path: '/story/' + story.data.id }">
+        <h2>{{ story.data.title }}</h2>
+      </router-link>
       <p>Type: {{ story.data.type }}</p>
       <p>Link: {{ story.data.url }}</p>
       <p>Score: {{ story.data.score }}</p>
