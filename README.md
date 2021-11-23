@@ -2,4 +2,4 @@
 
 ### [See live page](https://hn-clone-alpha.vercel.app/)
 
-![Homepage Gif](- https://github.com/RyanKendrick/hn-clone/blob/master/src/assets/demo.gif?raw=true)
+![Homepage Gif](https://github.com/RyanKendrick/hn-clone/blob/master/src/assets/demo.gif?raw=true)
